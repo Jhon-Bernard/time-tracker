@@ -1,0 +1,114 @@
+.navbar-brand{
+   color: #fff;
+   font-size: 35px;
+   font-weight: bold;
+ }
+
+.navi{
+  float: right;
+}
+.nav_link a{
+  color: #fff!important;
+}
+.nav_link a:hover{
+  color: rgba(70, 40, 36, 0.96) !important;
+  font-weight: bold;
+  font-size: 14px;
+}
+.navbar{
+  margin-bottom: 0px;
+}
+
+.homepage h1{
+  margin: 0px;
+}
+.home-container{
+  background: url(homepage.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 900px;
+  opacity: 0.8;
+}
+.home-container h1{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.jumbotron {
+  padding: 30px;
+  margin-bottom: 30px;
+  color: inherit;
+  text-align: center;
+  background: inherit;
+  opacity: 1;
+  opacity: 1;
+}
+the-content{
+  min-height: 1500px;
+}
+.panel-default>.panel-heading{
+  color: #333;
+  background-color: #f5f5f5;
+}
+.panel-default {
+  border-color: #ddd;
+  margin-top: 30px;
+}
+.panel.panel-default.devise-bs.container {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.panel-body {
+  padding: 30px;
+}
+.others {
+  padding-left: 30px;
+  padding-bottom: 20px;
+}
+.panel-heading h4{
+  font-size: 23px;
+}
+.alert-success{
+  margin-bottom: 0px;
+}
+.center, .center-below {
+  position: fixed;
+  top: 11%;
+  left: 89%;
+  transform: translate(-50%, -50%);
+
+}
+.time {
+  font-size: 90px;
+  color: #fff;
+}
+footer{
+  text-align: center;
+}
+.the-footer{
+  padding-top: 20px;
+}
+div.tagline {
+  position: fixed;
+  top: 44%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.tagline h1{
+  color: #fff;
+  font-size: 60px;
+  margin-bottom: 15px;
+}
+.tagline button{
+  color: #fff;
+  font-size: 36px;
+  background-color: #428bca;
+  border-radius: 16px;
+}
+.panel-default {
+  border-color: #ddd;
+  margin-top: 30px;
+  max-width: 500px;
+}

@@ -1,2 +1,24 @@
-<h1>Welcome to the Mini - Ashima</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+
+<div class="home-container">
+  <div class = "center">
+    <div class = "time">
+      <%=t = Time.now
+         t.strftime("Printed on %m/%d/%Y")   #=> "Printed on 04/09/2003"
+         t.strftime("%I:%M%p")%>
+    </div>
+  </div>
+<!--  <div class = "nav-men">-->
+<!--    <ul>-->
+<!--      <li>Services</li>-->
+<!--      <li>About Us</li>-->
+<!--      <li>Contact Us</li>-->
+<!--    </ul>-->
+<!--  </div>-->
+  <div class = "tagline">
+    <h1>
+      Fast and reliable time keeping and attendance system
+    </h1>
+    <button>Try it now</button>
+  </div>
+
+</div>

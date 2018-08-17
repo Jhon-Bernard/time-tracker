@@ -31,6 +31,11 @@ class TrackersController < ApplicationController
     redirect_to trackers_show
   end
 
+  def update
+
+
+  end
+
   def show
     @trackers
   end

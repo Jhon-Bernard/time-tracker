@@ -1,6 +1,10 @@
 <div class = "container jumbotron">
   <div class="col-lg-2 colm-2">
-    <div class="navs"><%= link_to "Home", root_path %></div>
+    <% if @last_log.loggin_out.nil? %>
+      <div class="navs"><%= link_to 'Time Out', root_path %></div>
+    <% else %>
+      <div class="navs"><%= link_to 'Time In', root_path %></div>
+    <% end %>
     <div class="navs"><%= link_to 'Profile', user_path(current_user) %></div>
     <div class="navs">Leaves</div>
     <div class="navs">Calendar</div>
@@ -28,6 +32,7 @@
               <% else %>
             <td>No log</td>
            <% end %>
+          <td><%= link_to "Edit log", track %></td>
 
 
           </tr>

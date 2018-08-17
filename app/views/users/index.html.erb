@@ -1,38 +1,49 @@
-<%# @users.each do |user| %>
-  <%#= link_to user.firstname, user %>
-<!--  <%#= user.email %></br>-->
-<%# end %>
-<div class = "container ">
-  <div class = "panel">
-    <div class = "panel-heading"><h4 class="panel-title">Overview</h4></div>
-    <div class = "panel-body">
-      <table class = "table table-responsive table-bordered">
-        <tr>
-          <th>User ID</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-        </tr>
-        <% @users.each do |user| %>
-                  <tr>
-                    <td><%= user.id %></td>
-                    <td><%= user.firstname %></td>
-                    <td><%= user.lastname %></td>
-        <% end %>
 
-        <%# @users.each do |user| %>
-          <%# user.trackers.each do |tracky| %>
-<!--          <tr>-->
-<!--            <td><%#= user.id %></td>-->
-<!--            <td><%#= user.firstname %></td>-->
-<!--            <td><%#= user.lastname %></td>-->
-<!--            <td><%#= tracky.loggin_in %></td>-->
-<!--            <td><%#= tracky.loggin_out %></td>-->
-            <%# dat = '2018-08-09 13:06:28' %>
-<!--            <td><%#= dat.to_time.strftime('%B %e at %l:%M %p') %></td>-->
-<!--            <td><%#= tracky.created_at.strftime("%b %d, %Y") %></td>-->
-              <%# end %>
-        <%# end %>
+
+<div class = "container jumbotron">
+  <div class="col-lg-2 colm-2">
+    <div class="navs"><%= link_to 'Home', root_path %></div>
+    <div class="navs"><%= link_to 'Profile', user_path(current_user) %></div>
+    <div class="navs">Leaves</div>
+    <div class="navs">Calendar</div>
+  </div>
+  <div class = "panel col-lg-10 col-body">
+    <div class = "panel-heading col-body-heading"><h4 class="panel-title">Overview</h4></div>
+    <table class = " panel-body table table-responsive table-bordered">
+      <tr>
+        <th>User ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+      </tr>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= user.firstname %></td>
+            <td><%= user.lastname %></td>
+            <td><%= link_to "Edit User", user %></td>
+        <% end %>
       </table>
     </div>
   </div>
 </div>
+
+<!--<div class = "container ">-->
+<!--  <div class = "panel">-->
+<!--    <div class = "panel-heading"><h4 class="panel-title">Overview</h4></div>-->
+<!--    <div class = "panel-body">-->
+<!--      <table class = "table table-responsive table-bordered">-->
+<!--        <tr>-->
+<!--          <th>User ID</th>-->
+<!--          <th>First Name</th>-->
+<!--          <th>Last Name</th>-->
+<!--        </tr>-->
+        <%# @users.each do |user| %>
+<!--                  <tr>-->
+<!--                    <td><%#= user.id %></td>-->
+<!--                    <td><%#= user.firstname %></td>-->
+<!--                    <td><%#= user.lastname %></td>-->
+        <%# end %>
+<!--      </table>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

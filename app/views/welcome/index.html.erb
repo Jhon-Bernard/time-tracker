@@ -22,12 +22,34 @@
            t.strftime("Printed on %m/%d/%Y")   #=> "Printed on 04/09/2003"
            t.strftime("%I:%M %p")%>
       </div>
+      <% if @last_log.loggin_out.nil? %>
+        <p>Logged In at: </p>
+      <p><%= @last_log.loggin_in.strftime("%I:%M %p") %></p>
       <div class = "the-button">
-        <form action="/trackers/timein" method="POST">
-          <button type = 'submit' id = "loggin-button">Time In</button>
+        <form action="/trackers/timeout" method="POST">
+          <button type = 'submit' id = "loggin-button">Time Out</button>
 
         </form>
       </div>
+        <% elsif @last_log.loggin_in.nil? == false %>
+        <p>Logged out at: </p>
+             <p><%= @last_log.loggin_in.strftime("%I:%M %p") %></p>
+        <div class = "the-button">
+          <form action="/trackers/timein" method="POST">
+            <button type = 'submit' id = "loggin-button">Time In</button>
+
+          </form>
+        </div>
+        <% else %>
+        <p>None of the above</p>
+          <p><%= @last_log.loggin_in.strftime("%I:%M %p") %></p>
+          <div class = "the-button">
+            <form action="/trackers/timein" method="POST">
+              <button type = 'submit' id = "loggin-button">Time In</button>
+
+            </form>
+          </div>
+        <% end %>
 <!--      <div class = "the-button">-->
 <!--        <button id = "login-button"><%#= link_to 'Time in', trackers_timein_path %></button>-->
 <!--      </div>-->

@@ -15,8 +15,17 @@
            t.strftime("Printed on %m/%d/%Y")   #=> "Printed on 04/09/2003"
            t.strftime("%I:%M %p")%>
       </div>
+      <p>Logged In at:</p>
+      <% if @last_log != nil %>
+        <%= @last_log.loggin_in.strftime("%I:%M %p") %>
+        <% else %>
+      <p>Last log is Nil</p>
+        <% end %>
       <div class = "the-button">
-        <button><%= link_to 'Time Out', trackers_timein_path %></button>
+        <form action="/trackers/timeout" method="POST">
+          <button type = 'submit' id = "loggin-button">Time Out</button>
+
+        </form>
       </div>
 
         </div>

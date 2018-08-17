@@ -17,8 +17,18 @@
           <% @user.trackers.each do |track| %>
 <!--          <tr>-->
             <td> <%= track.created_at.strftime("%b %d, %Y") %></td>
-            <td> <%= track.loggin_in.strftime("%H:%M %p") %></td>
-<!--            <td> <%#= track.loggin_out.strftime("%H:%M %p").to_s %></td>-->
+
+            <% if track.loggin_in != nil %>
+              <td><%= track.loggin_in.strftime("%H:%M %p") %></td>
+            <% else %>
+              <td>No log</td>
+            <% end %>
+              <% if track.loggin_out != nil %>
+            <td><%= track.loggin_out.strftime("%H:%M %p") %></td>
+              <% else %>
+            <td>No log</td>
+           <% end %>
+
 
           </tr>
 

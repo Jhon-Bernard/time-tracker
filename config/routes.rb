@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'attendance' => 'attendance#index'
   get 'users' => 'users#index'
   post 'trackers/timein' => 'trackers#timein'
+  post 'trackers/timeout' => 'trackers#timeout'
   post 'trackers/new' => 'trackers#new'
   get 'trackers/userlog' => 'users#userlog'
   get 'trackers/timeout' => 'trackers#timeout'

@@ -194,7 +194,8 @@ p.user-head {
   border-top-left-radius: 8px;
 }
 .panel{
-  margin-top: 30px
+  margin-top: 30px;
+  padding-bottom: 15px;
 }
 .panel-heading {
   font-size: 30px;
@@ -203,6 +204,7 @@ p.user-head {
 }
 .col-body{
   margin-top: 0px;
+  min-height: 257px;
 }
 .col-body-heading{
   padding-bottom: 30px;
@@ -237,4 +239,8 @@ p.user-head {
 }
 .form-head{
   color:#fff;
+}
+#log-time{
+  font-size: 25px;
+  color: #02173e;
 }

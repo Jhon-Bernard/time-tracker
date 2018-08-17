@@ -17,14 +17,14 @@
     <% else %>
     <div class = "center_logged">
       <div class = "time-logged">
-        <p>Hello <%= current_user.firstname %> !</p>
+<!--        <p>Hello <%#= current_user.firstname %> !</p>-->
         <%=t = Time.now
            t.strftime("Printed on %m/%d/%Y")   #=> "Printed on 04/09/2003"
            t.strftime("%I:%M %p")%>
       </div>
       <% if @last_log.loggin_out.nil? %>
-        <p>Logged In at: </p>
-      <p><%= @last_log.loggin_in.strftime("%I:%M %p") %></p>
+        <p id = "log-time">Logged In at: <%= @last_log.loggin_in.strftime("%I:%M %p") %></p>
+
       <div class = "the-button">
         <form action="/trackers/timeout" method="POST">
           <button type = 'submit' id = "loggin-button">Time Out</button>
@@ -32,8 +32,8 @@
         </form>
       </div>
         <% elsif @last_log.loggin_in.nil? == false %>
-        <p>Logged out at: </p>
-             <p><%= @last_log.loggin_in.strftime("%I:%M %p") %></p>
+        <p id = "log-time">Logged out at: <%= @last_log.loggin_in.strftime("%I:%M %p") %></p>
+
         <div class = "the-button">
           <form action="/trackers/timein" method="POST">
             <button type = 'submit' id = "loggin-button">Time In</button>
@@ -41,7 +41,7 @@
           </form>
         </div>
         <% else %>
-        <p>None of the above</p>
+        <p id = "log-time">None of the above</p>
           <p><%= @last_log.loggin_in.strftime("%I:%M %p") %></p>
           <div class = "the-button">
             <form action="/trackers/timein" method="POST">

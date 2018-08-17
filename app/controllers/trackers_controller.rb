@@ -8,7 +8,13 @@ class TrackersController < ApplicationController
   end
 
   def timein
-      # @attend= Tracker.new(user_id: current_user.id, loggin_in: @login, loggin_out: @logout)
+      @user= User.find(current_user.id)
+
+      @tracker = Tracker.new(user_id: @user.id, loggin_in: Time.now )
+      @tracker.save
+
+
+    # redirect_to users_show
   end
   def timeout
     # @attend.loggin_out = Time.now

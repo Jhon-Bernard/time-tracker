@@ -38,11 +38,13 @@
 .jumbotron {
   padding: 30px;
   margin-bottom: 30px;
+  margin-top: 30px;
   color: inherit;
   text-align: center;
-  background: inherit;
+  border-radius: 11px;
   opacity: 1;
   opacity: 1;
+  background-color: #428bca;
 }
 the-content{
   min-height: 1500px;
@@ -68,9 +70,18 @@ the-content{
 }
 .panel-heading h4{
   font-size: 23px;
+  text-align: center;
 }
 .alert-success{
   margin-bottom: 0px;
+}
+.center_logged, .center-below {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
 }
 .center, .center-below {
   position: fixed;
@@ -78,6 +89,13 @@ the-content{
   left: 89%;
   transform: translate(-50%, -50%);
 
+}
+.time-logged {
+  font-size: 140px;
+  color: #fff;
+}
+.time-logged p{
+  font-size: 51px;
 }
 .time {
   font-size: 90px;
@@ -96,19 +114,127 @@ div.tagline {
   transform: translate(-50%, -50%);
   text-align: center;
 }
+div.the-button {
+  position: fixed;
+  top: 113%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
 .tagline h1{
   color: #fff;
   font-size: 60px;
   margin-bottom: 15px;
 }
-.tagline button{
-  color: #fff;
+.tagline button, .the-button button{
+  color: #428bca;
   font-size: 36px;
-  background-color: #428bca;
+  background-color: #fff;
+  text-decoration: none;
   border-radius: 16px;
+}
+.the-button button:hover{
+  color: #fff;
+  background-color: #428bca;
+
+}
+.the-button button a:hover{
+  text-decoration: none;
+  color: #fff;
 }
 .panel-default {
   border-color: #ddd;
   margin-top: 30px;
   max-width: 500px;
+}
+
+.table-container {
+  position: fixed;
+  top: 33%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  width: 592px;
+  border-radius: 12px;
+  height: 388px;
+  padding-top: 23px;
+  background-color: white;
+}
+.user-info td {
+  font-size: 20px;
+  padding-left: 60px;
+  padding-right: 5px;
+  color: #584747;
+}
+
+.user-info th {
+  text-align: center;
+  font-size: 16px;
+  padding-bottom: 4px;
+  padding-right: 5px;
+}
+table {
+  border-collapse: collapse;
+  padding-bottom: 10px;
+}
+
+th{
+  font-size: 19px;
+}
+table, th, td {
+  border: 3px solid #3f4f56;
+  text-align: center;
+}
+
+p.user-head {
+  text-align: center;
+  font-size: 43px;
+  background-color: #d0c8c8;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+.panel{
+  margin-top: 30px
+}
+.panel-heading {
+  font-size: 30px;
+  padding-bottom: 0px;
+  padding-top: 28px;
+}
+.col-body{
+  margin-top: 0px;
+}
+.col-body-heading{
+  padding-bottom: 30px;
+  border-bottom: 2px solid #e4e4e4;
+}
+
+.page-navi{
+  margin-top: 15px
+}
+.navs {
+  background-color: #f7f7f7;
+  padding: 7px;
+  font-size: 17px;
+  font-weight: bold;
+  margin: 8px;
+  border-radius: 14px;
+}
+.colm-2 {
+  background-color: #bacada;
+  height: 257px;
+  padding-top: 27px;
+  border-right: 2px solid #757575;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.form-body{
+  background-color: #428bca;
+}
+.form-body label{
+  color: #fff;
+}
+.form-head{
+  color:#fff;
 }

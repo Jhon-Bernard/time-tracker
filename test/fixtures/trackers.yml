@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  loggin_in: 2018-08-09 21:02:02
+  loggin_out: 2018-08-09 21:02:02
+
+two:
+  user: two
+  loggin_in: 2018-08-09 21:02:02
+  loggin_out: 2018-08-09 21:02:02

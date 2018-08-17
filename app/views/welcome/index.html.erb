@@ -1,18 +1,11 @@
-
 <div class="home-container">
-  <div class = "center">
-    <div class = "time">
-      <%=t = Time.now
-         t.strftime("Printed on %m/%d/%Y")   #=> "Printed on 04/09/2003"
-         t.strftime("%I:%M%p")%>
-    </div>
-  </div>
-<!--  <div class = "nav-men">-->
-<!--    <ul>-->
-<!--      <li>Services</li>-->
-<!--      <li>About Us</li>-->
-<!--      <li>Contact Us</li>-->
-<!--    </ul>-->
+  <% if !user_signed_in? %>
+<!--  <div class = "center">-->
+<!--    <div class = "time">-->
+<!--      <%#=t = Time.now-->
+<!--         t.strftime("Printed on %m/%d/%Y")   #=> "Printed on 04/09/2003"-->
+         t.strftime("%I:%M %p")%>
+<!--    </div>-->
 <!--  </div>-->
   <div class = "tagline">
     <h1>
@@ -21,4 +14,52 @@
     <button>Try it now</button>
   </div>
 
+    <% else %>
+    <div class = "center_logged">
+      <div class = "time-logged">
+        <p>Hello <%= current_user.firstname %> !</p>
+        <%=t = Time.now
+           t.strftime("Printed on %m/%d/%Y")   #=> "Printed on 04/09/2003"
+           t.strftime("%I:%M %p")%>
+      </div>
+      <div class = "the-button">
+      <button><%= link_to 'Time in', trackers_timein_path %></button>
+<!--        <button>Time in</button>-->
+      </div>
+<!--      <div class = "the-button">-->
+<!--        <button id = "login-button"><%#= link_to 'Time in', trackers_timein_path %></button>-->
+<!--      </div>-->
+
 </div>
+    <% end %>
+
+</div>
+
+
+<!--Original page-->
+
+<!--<div class="home-container">-->
+  <%# if !user_signed_in? %>
+<!--  <div class = "tagline">-->
+<!--    <h1>-->
+<!--      Fast and reliable time keeping and attendance system-->
+<!--    </h1>-->
+<!--    <button><%#= link_to "Try it now!", new_user_registration_path %></button>-->
+<!--  </div>-->
+
+    <%# else %>
+<!--    <div class = "center_logged">-->
+<!--      <div class = "time-logged">-->
+<!--        <p>Hello <%#= current_user.firstname %> !</p>-->
+<!--        <%#=t = Time.now-->
+<!--           t.strftime("Printed on %m/%d/%Y")   #=> "Printed on 04/09/2003"-->
+           t.strftime("%I:%M %p")%>
+<!--      </div>-->
+<!--      <div class = "the-button">-->
+<!--      <button><%#= link_to 'Time in', trackers_timein_path %></button>-->
+<!--      </div>-->
+
+<!--</div>-->
+    <%# end %>
+
+<!--</div>-->

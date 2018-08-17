@@ -1,0 +1,30 @@
+
+<div class = "container jumbotron">
+  <div class="col-lg-2 colm-2">
+    <div class="navs">Home</div>
+    <div class="navs">Logs</div>
+    <div class="navs">Leaves</div>
+    <div class="navs">Calendar</div>
+  </div>
+  <div class = "panel col-lg-10 col-body">
+    <div class = "panel-heading col-body-heading "><h4 class="panel-title "><%= @user.firstname %>'s Profile</h4></div>
+      <table class = "table table-responsive table-bordered">
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+        </tr>
+          <tr>
+            <td><%= @user.firstname %></td>
+            <td><%= @user.lastname %></td>
+            <td><%= @user.email %></td>
+
+        </tr>
+      </table>
+      <div>
+        <p class = "page-navi"><%= link_to 'Logs', userlog_path %> | <%= link_to 'Edit', edit_user_path %></p>
+      </div>
+
+
+  </div>
+</div>

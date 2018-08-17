@@ -1,0 +1,23 @@
+<div class = "container ">
+  <div class = "panel">
+    <div class = "panel-heading"><h4 class="panel-title">Overview</h4></div>
+    <div class = "panel-body">
+      <table class = "table table-responsive table-bordered">
+        <tr>
+          <th>Uesr ID</th>
+          <th>First Name</t>
+          <th>Last Name</th>
+          <th>Email</th>
+        </tr>
+        <% @users.each do |user| %>
+        <tr>
+            <td><%= user.id %></td>
+            <td><%= user.firstname %></td>
+            <td><%= user.lastname %></td>
+            <td><%= user.email %> </td>
+          <% end %>
+        </tr>
+      </table>
+  </div>
+</div>
+</div>

@@ -1,0 +1,25 @@
+<div class="home-container">
+  <% if !user_signed_in? %>
+    <div class = "tagline">
+      <h1>
+        Fast and reliable time keeping and attendance system
+      </h1>
+      <button>Try it now</button>
+    </div>
+
+  <% else %>
+    <div class = "center_logged">
+      <div class = "time-logged">
+        <p>Hello <%= current_user.firstname %> !</p>
+        <%=t = Time.now
+           t.strftime("Printed on %m/%d/%Y")   #=> "Printed on 04/09/2003"
+           t.strftime("%I:%M %p")%>
+      </div>
+      <div class = "the-button">
+        <button><%= link_to 'Time Out', trackers_timein_path %></button>
+      </div>
+
+        </div>
+      <% end %>
+
+      </div>

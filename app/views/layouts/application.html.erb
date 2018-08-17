@@ -28,12 +28,18 @@
       <%= link_to 'TimeTracker', root_path, class: "navbar-brand" %>
       <div class="navbar-collapse navi collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav">
-          <% if user_signed_in? %>
+          <% if user_signed_in? && current_user.admin? %>
 <!--            <li class = "nav_link"><%#= link_to current_user.email, edit_registration_path %></li>-->
-            <li class = "nav_link"><%= link_to('Logout', destroy_user_session_path, :method => :delete)  %></li>
+            <li class = "nav_link"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+            <li class = "nav_link"><%= link_to 'My Profile', user_path(current_user)%> </li>
+            <% elsif user_signed_in? && !current_user.admin? %>
+              <li class = "nav_link"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+              <li class = "nav_link"><%= link_to 'My Profile', user_path(current_user)%></li>
+              <li class = "nav_link"><%= link_to "Users", users_path %></li>
             <% else %>
-              <li class = "nav_link"><%= link_to "Log in", "/users/sign_in"  %></li>
-              <li class = "nav_link"><%= link_to "Sign Up", "/users/sign_up"  %></li>
+            <li class = "nav_link"><%= link_to "Log in", "/users/sign_in"  %></li>
+            <li class = "nav_link"><%= link_to "Sign Up", "/users/sign_up"  %></li>
+
             <% end %>
         </ul>
       </div>

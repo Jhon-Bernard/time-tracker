@@ -1,0 +1,13 @@
+<div>
+  <% @trackers.each do |track| %>
+    <%= track.user_id %>
+    <%= track.loggin_in %>
+    <%= track.loggin_out %><br>
+  <% end %>
+  <% @users.each do |user| %>
+    <%= user.id %>
+    <%= user.firstname %>
+    <%= user.lastname %></br>
+  <% end %>
+  tracker
+</div>

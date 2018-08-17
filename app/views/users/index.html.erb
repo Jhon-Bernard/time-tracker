@@ -1,0 +1,38 @@
+<%# @users.each do |user| %>
+  <%#= link_to user.firstname, user %>
+<!--  <%#= user.email %></br>-->
+<%# end %>
+<div class = "container ">
+  <div class = "panel">
+    <div class = "panel-heading"><h4 class="panel-title">Overview</h4></div>
+    <div class = "panel-body">
+      <table class = "table table-responsive table-bordered">
+        <tr>
+          <th>User ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+        </tr>
+        <% @users.each do |user| %>
+                  <tr>
+                    <td><%= user.id %></td>
+                    <td><%= user.firstname %></td>
+                    <td><%= user.lastname %></td>
+        <% end %>
+
+        <%# @users.each do |user| %>
+          <%# user.trackers.each do |tracky| %>
+<!--          <tr>-->
+<!--            <td><%#= user.id %></td>-->
+<!--            <td><%#= user.firstname %></td>-->
+<!--            <td><%#= user.lastname %></td>-->
+<!--            <td><%#= tracky.loggin_in %></td>-->
+<!--            <td><%#= tracky.loggin_out %></td>-->
+            <%# dat = '2018-08-09 13:06:28' %>
+<!--            <td><%#= dat.to_time.strftime('%B %e at %l:%M %p') %></td>-->
+<!--            <td><%#= tracky.created_at.strftime("%b %d, %Y") %></td>-->
+              <%# end %>
+        <%# end %>
+      </table>
+    </div>
+  </div>
+</div>

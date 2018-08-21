@@ -36,7 +36,8 @@ class TrackersController < ApplicationController
   end
 
   def show
-    @trackers
+    @trackers = current_user.trackers
+
   end
 
   private

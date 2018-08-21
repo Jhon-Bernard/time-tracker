@@ -16,6 +16,8 @@
         <th>Last Name</th>
         <th>Position</th>
         <th>Client</th>
+        <th>Role</th>
+        <th></th>
       </tr>
         <% @users.each do |user| %>
           <tr>
@@ -24,7 +26,13 @@
             <td><%= user.lastname %></td>
             <td><%= user.position %></td>
             <td><%= user.client %></td>
+            <% if user.admin %>
+              <td>Admin</td>
+            <% else %>
+              <td>Not Admin </td>
+            <% end %>
             <td><%= link_to "View", user_path(user) %>| <%= link_to "Edit", edit_user_path(user) %>| <%= link_to "Delete", user_path(user) %></td>
+
         <% end %>
       </table>
     </div>

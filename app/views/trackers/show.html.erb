@@ -1,1 +1,5 @@
 <%= current_user.firstname %>
+
+<% @trackers.each do |track| %>
+    <%= track.loggin_out %><br/>
+<% end %>

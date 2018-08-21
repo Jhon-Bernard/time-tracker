@@ -16,9 +16,13 @@
           <th>Date</th>
           <th>Log in</th>
           <th>Log out</th>
+          <th>Tardy</th>
+          <th>Hours Worked</th>
         </tr>
 
           <% @user.trackers.order(created_at: :desc).each  do |track| %>
+          <%# d = DateTime.parse(track.loggin_in.to_s) %>
+<!--          <td>day <%#= d.day %></td>-->
 <!--          <tr>-->
             <td> <%= track.created_at.strftime("%b %d, %Y") %></td>
 
@@ -31,10 +35,16 @@
             <td><%= track.loggin_out.strftime("%H:%M %p") %></td>
               <% else %>
             <td>No log</td>
+
+
            <% end %>
+          <td>No data yet</td>
+          <td>No data yet</td>
+          <td><%= track.loggin_out %></td>
+          <td><%= track.loggin_in %></td>
+<!--          <td><%#= ((track.loggin_out - track.loggin_in)/3600.0).round(2) %></td>-->
+<!--          <td><%#= track.loggin_in - track.loggin_out %></td>-->
 <!--          <td><%#= link_to "Edit log", track %></td>-->
-
-
           </tr>
 
           <% end %>

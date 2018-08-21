@@ -22,7 +22,7 @@
            t.strftime("Printed on %m/%d/%Y")   #=> "Printed on 04/09/2003"
            t.strftime("%I:%M %p")%>
       </div>
-      <% if @last_log.loggin_out.nil? %>
+      <% if @last_log.loggin_out == "No log" || @last_log.loggin_out.nil? %>
         <p id = "log-time">Logged In at: <%= @last_log.loggin_in.strftime("%I:%M %p") %></p>
 
       <div class = "the-button">

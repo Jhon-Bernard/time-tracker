@@ -1,7 +1,7 @@
 
 <div class = "container jumbotron">
   <div class="col-lg-2 colm-2">
-    <% if @last_log.loggin_out.nil? %>
+    <% if signed_in? && @last_log.loggin_out.nil? %>
       <div class="navs"><%= link_to 'Time Out', root_path %></div>
     <% else %>
       <div class="navs"><%= link_to 'Time In', root_path %></div>
@@ -17,11 +17,15 @@
           <th>First Name</th>
           <th>Last Name</th>
           <th>Email</th>
+          <th>Position</th>
+          <th>Client</th>
         </tr>
           <tr>
             <td><%= @user.firstname %></td>
             <td><%= @user.lastname %></td>
             <td><%= @user.email %></td>
+            <td><%= @user.position %></td>
+            <td><%= @user.client %></td>
 
         </tr>
       </table>

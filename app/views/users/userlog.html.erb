@@ -18,7 +18,7 @@
           <th>Log out</th>
         </tr>
 
-          <% @user.trackers.each do |track| %>
+          <% @user.trackers.order(created_at: :desc).each  do |track| %>
 <!--          <tr>-->
             <td> <%= track.created_at.strftime("%b %d, %Y") %></td>
 
@@ -32,7 +32,7 @@
               <% else %>
             <td>No log</td>
            <% end %>
-          <td><%= link_to "Edit log", track %></td>
+<!--          <td><%#= link_to "Edit log", track %></td>-->
 
 
           </tr>

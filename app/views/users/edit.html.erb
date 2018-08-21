@@ -1,7 +1,7 @@
 <div class="panel panel-default devise-bs container">
   <div class="panel-body">
-    <div class="panel-heading" >
-      <h4 class = "text-center"><%= @user.firstname %>'s Information</h4>
+    <div>
+      <h3 class = "text-center"><%= @user.firstname %>'s Information</h3><br/>
     </div>
     <%= form_for(@user, html: { method: :put }) do |f| %>
       <div class="form-group">
@@ -10,7 +10,15 @@
       </div>
       <div class="form-group">
         <label>Last Name</label>
-        <%= f.text_field :lastname, autofocus: true, class: 'form-control' %>
+        <%= f.text_field :position, autofocus: true, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <label>Position</label>
+        <%= f.text_field :position, autofocus: true, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <label>Client</label>
+        <%= f.text_field :client, autofocus: true, class: 'form-control', readonly: true %>
       </div>
       <div class="form-group">
         <%= f.label :email %>
@@ -24,8 +32,8 @@
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, class: 'form-control'  %>
       </div>
-      <div><%= f.submit t('.update', default: 'Update'), class: 'btn btn-primary' %></div>
-      <div><%= link_to 'Back to homepage', root_path %></div>
+      <div><%= f.submit t('.update', default: 'Update'), class: 'btn btn-primary' %></div><br/>
+      <div><%= link_to 'Back to Profile', user_path %></div>
     <% end %>
 
     <div>

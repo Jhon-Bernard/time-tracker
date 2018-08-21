@@ -33,7 +33,6 @@ class TrackersController < ApplicationController
 
   def update
 
-
   end
 
   def show

@@ -1,10 +1,10 @@
 <div class = "container jumbotron">
   <div class="col-lg-2 colm-2">
-    <% if @last_log.loggin_out.nil? %>
-      <div class="navs"><%= link_to 'Time Out', root_path %></div>
-    <% else %>
-      <div class="navs"><%= link_to 'Time In', root_path %></div>
-    <% end %>
+    <% if current_user.trackers.count > 0 %>
+        <div class="navs"><%= link_to 'Punch', root_path %></div>
+      <% else %>
+        <div class="navs"><%= link_to 'Start', root_path %></div>
+      <% end %>
     <div class="navs"><%= link_to 'Profile', user_path(current_user) %></div>
     <div class="navs">Leaves</div>
     <div class="navs">Calendar</div>
@@ -23,31 +23,31 @@
           <% @user.trackers.order(created_at: :desc).each  do |track| %>
           <%# d = DateTime.parse(track.loggin_in.to_s) %>
 <!--          <td>day <%#= d.day %></td>-->
-<!--          <tr>-->
+
             <td> <%= track.created_at.strftime("%b %d, %Y") %></td>
 
             <% if track.loggin_in != nil %>
-              <td><%= track.loggin_in.strftime("%H:%M %p") %></td>
+              <td><%= track.loggin_in.strftime("%l:%M %p") %></td>
             <% else %>
               <td>No log</td>
             <% end %>
               <% if track.loggin_out != nil %>
-            <td><%= track.loggin_out.strftime("%H:%M %p") %></td>
+            <td><%= track.loggin_out.strftime("%l:%M %p") %></td>
               <% else %>
             <td>No log</td>
-
-
            <% end %>
           <td>No data yet</td>
-          <td>No data yet</td>
-          <td><%= track.loggin_out %></td>
-          <td><%= track.loggin_in %></td>
+          <% if !track.hours.nil? %>
+            <td><%= ((track.hours)/3600.0).round(3) %></td>
+          <% else %>
+            <td>To be computed</td>
+          <% end %>
 <!--          <td><%#= ((track.loggin_out - track.loggin_in)/3600.0).round(2) %></td>-->
 <!--          <td><%#= track.loggin_in - track.loggin_out %></td>-->
 <!--          <td><%#= link_to "Edit log", track %></td>-->
           </tr>
-
           <% end %>
+
 
       </table>
 <!--      <div class = "page-navi">-->

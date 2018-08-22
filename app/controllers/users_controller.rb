@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @last_log = current_user.trackers.last
-
   end
   def index
     # @attend= Tracker.new(user_id: current_user.id, loggin_in: @login, loggin_out: @logout)

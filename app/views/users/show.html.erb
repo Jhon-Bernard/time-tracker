@@ -1,10 +1,12 @@
 
 <div class = "container jumbotron">
   <div class="col-lg-2 colm-2">
-    <% if @last_log.loggin_out.nil? %>
-      <div class="navs"><%= link_to 'Time Out', root_path %></div>
+    <% if @user.trackers.count > 0 %>
+      <div class="navs"><%= link_to 'Badge', root_path %></div>
     <% else %>
-      <div class="navs"><%= link_to 'Time In', root_path %></div>
+      <%# if (@last_log.loggin_out != nil) %>
+        <div class="navs"><%= link_to 'Start', root_path %></div>
+        <%# end %>
     <% end %>
     <div class="navs"><%= link_to "Logs", trackers_userlog_path %></div>
     <div class="navs">Leaves</div>

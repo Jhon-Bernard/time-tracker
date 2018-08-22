@@ -11,7 +11,13 @@ class TrackersController < ApplicationController
       @user= User.find(current_user.id)
 
 
-      @tracker = Tracker.new(user_id: @user.id, loggin_in: Time.now - 4.hours )
+      @tracker = Tracker.new(user_id: @user.id, loggin_in: Time.now - 16.hours )
+      @tardy = @tracker.loggin_in - 7.hours
+      if (@tracker.loggin_in <= @tardy )
+          @tracker.tardy = @tracker.loggin - @tardy
+      else
+        @tracker.tardy = 0
+      end
       @tracker.save
 
      redirect_to trackers_userlog_path
@@ -19,8 +25,10 @@ class TrackersController < ApplicationController
   def timeout
     @last_log = current_user.trackers.last
     if @last_log.loggin_in != nil || @last_log.loggin_out == nil
-      @last_log.update(loggin_out: Time.now - 4.hours)
+      @last_log.update(loggin_out: Time.now - 16.hours)
+      @last_log.hours = @last_log.loggin_out - @last_log.loggin_in
       @last_log.save
+
     end
     redirect_to trackers_userlog_path
   end
